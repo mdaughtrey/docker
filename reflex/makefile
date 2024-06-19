@@ -5,7 +5,7 @@ DOCKER=docker.exe
 #	${DOCKER} run -dh ${TAG} --name ${TAG} -it  -v /c/Users/matt/Documents/dev/personal-projects:/personal-projects ${TAG}:latest 
 
 runi:
-	${DOCKER} run --rm -h ${TAG} -p 3000:3000 --name ${TAG} -it ${TAG}:latest  /bin/bash
+	${DOCKER} run --rm -h ${TAG} -p 3000:3000 -v ${HOME}/projects/docker/reflex/app/:/app -w /app --name ${TAG} -it ${TAG}:latest  /bin/bash
 
 #run:
 #	${DOCKER} run -dh ${TAG} --name ${TAG} --publish 8000:8000 -v ${HOMEDIR}:/personal-projects ${TAG}:latest /home/mattd/demo.sh
